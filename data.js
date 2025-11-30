@@ -1,20 +1,27 @@
 const portfolioData = {
     about: `I graduated from Dessie Special Boarding School with high EUEE results.
-I am currently an Information Systems student at Addis Ababa University.
+I am currently pursuing a Bachelor's degree in Information Systems at Addis Ababa University.
 
 I completed Udacity’s AI & Data Science course, Educba’s Data Analysis with Python,
 and built an AI-powered Telegram bot for AAU students.
 
 I am currently attending 10 Academy’s Kaim AI Mastery course.
-I value visuals, aesthetics, teamwork, and punctuality.`,
+I excel at visuals, aesthetics, teamwork, and punctuality.`,
 
     skills: [
-        "Python", "Data Analysis", "Machine Learning", "AI Chatbots",
-        "HTML", "CSS", "JavaScript", "UI/Visual Design"
+        "Python",
+        "Data Analysis",
+        "Machine Learning",
+        "AI Chatbots",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "UI/Visual Design",
+        "Graphics & Aesthetics"
     ],
 
     education: [
-        { institution: "Addis Ababa University", degree: "BSc, Info Systems", period: "2024 — Present" },
+        { institution: "Addis Ababa University", degree: "BSc, Information Systems", period: "2024 — Present" },
         { institution: "Dessie Special Boarding School", degree: "High School Diploma", period: "Graduated 2023" }
     ],
 
@@ -27,13 +34,19 @@ I value visuals, aesthetics, teamwork, and punctuality.`,
         {
             name: "AAU Info Bot (Telegram)",
             description: "AI bot for instant university information for AAU students.",
-            link: "https://github.com/Samuel-0228/Companion-",
+            link: "https://github.com/Samuel-02",
             image: "assets/project-bot.png"
+        },
+        {
+            name: "Portfolio Website (This Site)",
+            description: "A modern, interactive, and visually dynamic portfolio built with HTML, CSS, and JavaScript.",
+            link: "#",
+            image: "assets/project-portfolio.png"
         }
     ],
 
     contact: {
-        email: "your.email@example.com",
-        github: "https://github.com/Samuel-0228",
+        email: "ytsamuael@gmail.com",
+        github: "https://github.com/Samuel-02"
     }
 };

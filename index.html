@@ -2,10 +2,14 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Samuel — Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -14,6 +18,7 @@
     <nav class="navbar">
         <div class="logo">Samuel</div>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -25,6 +30,16 @@
 
     <!-- HERO SECTION -->
     <header id="hero" class="hero tilt">
+
+        <!-- FLOATING ABSTRACT SHAPES -->
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+
+        <!-- MOVING LINES -->
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+
         <div class="hero-content">
             <h1 class="name-glow">Samuel</h1>
             <h2><span id="typewriter"></span></h2>
@@ -32,16 +47,18 @@
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN CONTENT (injected dynamically) -->
     <main id="content"></main>
 
     <footer>
-        <p>© Samuel — Built with passion.</p>
+        <p>© 2025 Samuel — Crafted with passion & creativity.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
+
 </body>
 
 </html>

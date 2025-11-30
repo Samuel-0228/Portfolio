@@ -3,12 +3,17 @@
     --bg-card: #121212;
     --text-light: #e6e6e6;
     --accent: #ffae42;
-    /* gold/orange */
+    /* Gold/Orange */
     --accent-glow: #ffbb55;
 }
 
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-light);
@@ -19,18 +24,18 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 5%;
     align-items: center;
+    padding: 20px 5%;
     position: sticky;
     top: 0;
+    z-index: 1000;
     background: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
-    z-index: 1000;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
     color: var(--accent);
 }
 
@@ -50,7 +55,6 @@ body {
     color: var(--accent);
 }
 
-/* MOBILE MENU */
 .menu-icon {
     display: none;
     font-size: 28px;
@@ -59,13 +63,20 @@ body {
 
 /* HERO SECTION */
 .hero {
+    position: relative;
     height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     background: radial-gradient(circle at bottom, #111, #000);
+    overflow: hidden;
     padding: 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
 }
 
 .name-glow {
@@ -77,14 +88,88 @@ body {
 .subtitle {
     opacity: 0.8;
     margin-top: 10px;
+    font-weight: 300;
+}
+
+/* FLOATING SHAPES */
+.shape {
+    position: absolute;
+    background: var(--accent-glow);
+    opacity: 0.15;
+    border-radius: 50%;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+.shape1 {
+    width: 60px;
+    height: 60px;
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.shape3 {
+    width: 80px;
+    height: 80px;
+    top: 70%;
+    left: 25%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-30px) rotate(360deg);
+    }
+}
+
+/* MOVING LINES */
+.line {
+    position: absolute;
+    width: 2px;
+    height: 120%;
+    background: linear-gradient(to bottom, transparent, var(--accent-glow), transparent);
+    opacity: 0.15;
+    animation: lineMove 15s linear infinite;
+}
+
+.line1 {
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.line2 {
+    left: 60%;
+    animation-delay: 7s;
+}
+
+@keyframes lineMove {
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(100%);
+    }
 }
 
 /* SECTIONS */
 .section {
-    margin: 60px auto;
-    max-width: 900px;
+    margin: 80px auto;
+    max-width: 1000px;
     padding: 0 20px;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .section h2 {
@@ -92,7 +177,25 @@ body {
     color: var(--accent);
     border-left: 4px solid var(--accent);
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+}
+
+/* SKILL BADGES */
+.skill-badge {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--accent);
+    color: var(--text-light);
+    padding: 5px 12px;
+    border-radius: 8px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.skill-badge:hover {
+    background: var(--accent);
+    color: #000;
+    transform: scale(1.05);
 }
 
 /* PROJECT CARDS */
@@ -103,32 +206,36 @@ body {
     margin-bottom: 25px;
     transition: 0.4s;
     border: 1px solid #262626;
+    cursor: pointer;
 }
 
 .project-card:hover {
     transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 20px rgba(255, 174, 66, 0.3);
+    box-shadow: 0 0 25px rgba(255, 174, 66, 0.3);
 }
 
 .project-card img {
     width: 100%;
     border-radius: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-/* CONTACT */
-a {
-    color: var(--accent);
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px 10px;
+    color: #888;
+    font-size: 14px;
 }
 
 /* ANIMATIONS */
-@keyframes fadeIn {
-    from {
+@keyframes fadeInUp {
+    0% {
         opacity: 0;
         transform: translateY(20px);
     }
 
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
@@ -146,5 +253,13 @@ a {
         background: #111;
         padding: 20px;
         margin-top: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
     }
 }
