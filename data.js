@@ -22,12 +22,14 @@ I excel at visuals, aesthetics, teamwork, and punctuality.`,
 
     education: [
         { institution: "Addis Ababa University", degree: "BSc, Information Systems", period: "2024 — Present" },
-        { institution: "Dessie Special Boarding School", degree: "High School Diploma", period: "Graduated 2023" }
+        { institution: "Dessie Special Boarding School", degree: "High School Diploma", period: "Graduated 2024" }
     ],
 
     certifications: [
         "Udacity — AI & Data Science",
-        "Educba — Data Analysis with Python"
+        "Educba — Data Analysis with Python",
+        "10 Academy — Kaim AI Mastery Program",
+        "AI For Ethiopia — AI Fundamentals"
     ],
 
     projects: [
