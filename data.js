@@ -37,13 +37,13 @@ I excel at visuals, aesthetics, teamwork, and punctuality.`,
             name: "AAU Info Bot (Telegram)",
             description: "AI bot for instant university information for AAU students.",
             link: "https://github.com/Samuel-0228",
-            image: "assets/project-bot.png"
+
         },
         {
             name: "Portfolio Website (This Site)",
             description: "A modern, interactive, and visually dynamic portfolio built with HTML, CSS, and JavaScript.",
             link: "https://samuel-0228.github.io/Portfolio/",
-            image: "assets/project-portfolio.png"
+
         }
     ],
 
