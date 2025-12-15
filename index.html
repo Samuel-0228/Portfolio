@@ -2,63 +2,114 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Samuel's — Portfolio</title>
-
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel YT — AI & Data Visionary</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Inter for clean modern text, Orbitron for futuristic accents -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Particles.js for futuristic background (CDN for simplicity) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
 </head>
 
-<body>
+<body class="dark-theme">
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">Samuel</div>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-        <ul class="nav-links" id="nav-links">
+        <div class="logo">
+            <span class="logo-text">S</span><span class="logo-glow">amuel</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a href="#timeline">Timeline</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header id="hero" class="hero tilt">
-
-        <!-- FLOATING ABSTRACT SHAPES -->
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-
-        <!-- MOVING LINES -->
-        <div class="line line1"></div>
-        <div class="line line2"></div>
-
+    <section id="hero" class="hero">
+        <div id="particles-js" class="particles-container"></div>
         <div class="hero-content">
             <h1 class="name-glow">Samuel</h1>
-            <h2><span id="typewriter"></span></h2>
-            <p class="subtitle">AI • Data Science • IS Student • Visual Thinker</p>
+            <h2 class="typewriter-container"><span id="typewriter"></span></h2>
+            <p class="subtitle">Crafting AI Futures | Data Alchemist | Visual Innovator</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Explore Works</a>
+                <a href="#contact" class="btn-secondary">Get In Touch</a>
+            </div>
         </div>
-    </header>
+        <div class="scroll-indicator">↓</div>
+    </section>
 
-    <!-- MAIN CONTENT (injected dynamically) -->
-    <main id="content"></main>
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <!-- Dynamic content injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills Matrix</h2>
+            <div class="skills-grid">
+                <!-- Dynamic content injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE SECTION (Education + Certifications) -->
+    <section id="timeline" class="section">
+        <div class="container">
+            <h2 class="section-title">Journey</h2>
+            <div class="timeline">
+                <!-- Dynamic content injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Creations</h2>
+            <div class="projects-grid">
+                <!-- Dynamic content injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <!-- Dynamic content injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Project Details -->
+    <!-- Dynamic modals injected here -->
 
     <footer>
-        <p>© 2025 Samuel — echo "Progress over perfection."</p>
+        <p>© 2025 Samuel — 🐛echo "Progress over ፍጹማዊነት"</p>
     </footer>
 
     <!-- Scripts -->
     <script src="data.js"></script>
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
-
 </body>
 
 </html>

@@ -1,15 +1,34 @@
-// ===== TYPEWRITER EFFECT =====
-const typewriterTexts = ["AI Enthusiast", "Data Scientist", "Visual Thinker", "Problem Solver"];
+// js/animations.js - Simplified: Particles, typewriter functions, theme toggle, hero tilt
+// Particles.js init for hero background
+particlesJS('particles-js', {
+    particles: {
+        number: { value: 80, density: { enable: true, value_area: 800 } },
+        color: { value: '#ffae42' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: '#ffae42', opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+    },
+    interactivity: {
+        detect_on: 'canvas',
+        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+        modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+    },
+    retina_detect: true
+});
+
+// Typewriter effect - Enhanced texts for futuristic vibe
+const typewriterTexts = ["AI Visionary", "Data Alchemist", "Code Sculptor", "Innovation Catalyst"];
 let typeIndex = 0;
 let charIndex = 0;
-const typeSpeed = 120;
-const eraseSpeed = 60;
-const delay = 2000;
+const typeSpeed = 100;
+const eraseSpeed = 50;
+const delay = 2500;
 
 function typeWriter() {
     const typeEl = document.getElementById("typewriter");
     if (!typeEl) return;
-
     if (charIndex < typewriterTexts[typeIndex].length) {
         typeEl.textContent += typewriterTexts[typeIndex].charAt(charIndex);
         charIndex++;
@@ -22,7 +41,6 @@ function typeWriter() {
 function eraseWriter() {
     const typeEl = document.getElementById("typewriter");
     if (!typeEl) return;
-
     if (charIndex > 0) {
         typeEl.textContent = typewriterTexts[typeIndex].substring(0, charIndex - 1);
         charIndex--;
@@ -33,63 +51,28 @@ function eraseWriter() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => typeWriter());
-
-// ===== 3D TILT HERO =====
-const tiltHero = document.querySelector(".tilt");
-if (tiltHero) {
-    tiltHero.addEventListener("mousemove", (e) => {
-        const { width, height, left, top } = tiltHero.getBoundingClientRect();
-        const x = e.clientX - left - width / 2;
-        const y = e.clientY - top - height / 2;
-        const tiltX = (y / height) * 15;
-        const tiltY = -(x / width) * 15;
-        tiltHero.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+// Theme toggle (immediate)
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        const icon = document.getElementById('theme-toggle');
+        icon.textContent = document.body.classList.contains('light-theme') ? '🌞' : '🌙';
     });
-    tiltHero.addEventListener("mouseleave", () => {
-        tiltHero.style.transform = "rotateX(0deg) rotateY(0deg)";
+
+    // Hero tilt (immediate)
+    const hero = document.querySelector('.hero');
+    hero.addEventListener('mousemove', (e) => {
+        const rect = e.currentTarget.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = (y - centerY) / 10;
+        const rotateY = (centerX - x) / 10;
+        e.currentTarget.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
-}
 
-// ===== SCROLL TRIGGERED FADE-IN =====
-const faders = document.querySelectorAll(".section, .project-card");
-const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("appear");
-        observer.unobserve(entry.target);
+    hero.addEventListener('mouseleave', () => {
+        hero.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
     });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
-
-// ===== OPTIONAL: FLOATING SHAPES + LINE ENHANCEMENT =====
-// Randomized subtle movements for floating shapes
-const shapes = document.querySelectorAll(".shape");
-shapes.forEach((shape) => {
-    const speed = Math.random() * 0.5 + 0.2;
-    let pos = 0;
-    function move() {
-        pos += speed;
-        shape.style.transform = `translateY(${Math.sin(pos) * 15}px) rotate(${pos * 5}deg)`;
-        requestAnimationFrame(move);
-    }
-    move();
-});
-
-// Smooth moving lines animation
-const lines = document.querySelectorAll(".line");
-lines.forEach((line, index) => {
-    let pos = 0;
-    const speed = 0.3 + index * 0.05;
-    function animateLine() {
-        pos += speed;
-        line.style.transform = `translateY(${pos % 200 - 100}%)`;
-        requestAnimationFrame(animateLine);
-    }
-    animateLine();
 });

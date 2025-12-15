@@ -1,49 +1,48 @@
+// data.js - No changes
 const portfolioData = {
-    about: `I graduated from Dessie Special Boarding School with high EUEE results.
-I am currently pursuing a Bachelor's degree in Information Systems at Addis Ababa University.
+    about: `High-achieving graduate from Dessie Special Boarding School (EUEE Excellence). Currently pursuing BSc in Information Systems at Addis Ababa University.
 
-I completed Udacity’s AI & Data Science course, Educba’s Data Analysis with Python,
-and built an AI-powered Telegram bot for AAU students.
+Mastered AI & Data Science via Udacity, Python Data Analysis on Educba, and deployed an AI Telegram bot for AAU community support.
 
-I am currently attending 10 Academy’s Kaim AI Mastery course.
-I excel at visuals, aesthetics, teamwork, and punctuality.`,
+Enrolled in 10 Academy’s Kaim AI Mastery. Passionate about visuals, aesthetics, collaborative innovation, and relentless punctuality.`,
 
     skills: [
-        "Python",
-        "Data Analysis",
-        "Machine Learning",
-        "AI Chatbots",
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "UI/Visual Design",
-        "Graphics & Aesthetics"
+        "Python", "Data Analysis", "Machine Learning", "AI Chatbots",
+        "HTML/CSS", "JavaScript", "UI/UX Design", "Graphics & Aesthetics"
     ],
 
     education: [
-        { institution: "Addis Ababa University", degree: "BSc, Information Systems", period: "2024 — Present" },
-        { institution: "Dessie Special Boarding School", degree: "High School Diploma", period: "Graduated 2024" }
+
+        { institution: "Dessie Special Boarding School", degree: "High School Diploma", period: "Graduated 2024" },
+        { institution: "Addis Ababa University", degree: "BSc, Information Systems", period: "2024 — Present" }
     ],
 
     certifications: [
-        "Udacity — AI & Data Science",
+        "Udacity — AI & Data Science Nanodegree",
         "Educba — Data Analysis with Python",
-        "10 Academy — Kaim AI Mastery Program",
-        "AI For Ethiopia — AI Fundamentals"
+        "AI For Ethiopia — AI Fundamentals",
+        "10 Academy — Kaim AI Mastery Program(in progress)"
     ],
 
     projects: [
         {
             name: "AAU Info Bot (Telegram)",
-            description: "AI bot for instant university information for AAU students.",
-            link: "https://github.com/Samuel-0228",
-
+            description: "Intelligent AI bot delivering real-time university info, schedules, and resources to AAU students via natural language queries.",
+            link: "https://github.com/Samuel-0228/Companion-",
+            image: "assets/project-bot.jpg"
         },
         {
-            name: "Portfolio Website (This Site)",
-            description: "A modern, interactive, and visually dynamic portfolio built with HTML, CSS, and JavaScript.",
-            link: "https://samuel-0228.github.io/Portfolio/",
-
+            name: "Meret E-commerce",
+            description: "Revolutionary platform bridging Ethiopian farmers and consumers with secure, AI-optimized market matching and logistics integration.",
+            link: "https://github.com/Samuel-0228/meret-ecommerce",
+            image: "assets/project-meret.png"
+        }
+        ,
+        {
+            name: "Ethiopiaye",
+            description: "An innovative tourism platform celebrating Ethiopia's rich cultural heritage. Features AI-powered personalized travel itineraries, immersive 360° virtual tours, and seamless booking integration to inspire unforgettable journeys.",
+            link: "https://github.com/Samuel-0228/Ethiopiaye",
+            image: "assets/project-ethiopiaye.jpg"
         }
     ],
 
