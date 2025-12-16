@@ -144,19 +144,65 @@ document.addEventListener('DOMContentLoaded', () => {
   animateSkillBars(); // Then animations
 
   // Form handler
-  // Form handler - Real email sending with EmailJS
+  // Add this function before the form handler to create styled modals
+  function createNotificationModal(type, message) {
+    // Remove existing modal if any
+    const existingModal = document.querySelector('.notification-modal');
+    if (existingModal) existingModal.remove();
+
+    const modal = document.createElement('div');
+    modal.className = 'modal notification-modal';  // Reuse existing modal styles
+    modal.innerHTML = `
+        <div class="modal-content notification-content">
+            <span class="close">&times;</span>
+            <div class="notification-icon">${type === 'success' ? '✅' : '❌'}</div>
+            <h3>${type === 'success' ? 'Success!' : 'Error!'}</h3>
+            <p>${message}</p>
+            <button class="btn-primary close-btn">OK</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+
+    // Show modal
+    modal.style.display = 'block';
+
+    // Close on click
+    const close = modal.querySelector('.close');
+    const closeBtn = modal.querySelector('.close-btn');
+    close.addEventListener('click', () => modal.style.display = 'none');
+    closeBtn.addEventListener('click', () => modal.style.display = 'none');
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => modal.style.display = 'none', 3000);
+
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+  }
+
+  // Updated Form handler - Real email sending with EmailJS (no console, styled modals)
   document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();  // Prevent default form submission
+    e.preventDefault(); // Prevent default form submission
+
+    // Optional: Add loading state
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
 
     // Send email via EmailJS
     emailjs.sendForm('service_dkiug9r', 'template_40toodj', '#contact-form', 'Ge23N6ZheHUku30D_')
       .then((result) => {
-        console.log('Email sent successfully!', result.text);
-        alert('Message sent! I\'ll get back to you soon.');  // Or show a success modal
-        e.target.reset();  // Clear form
+        e.target.reset(); // Clear form
+        createNotificationModal('success', 'Message sent! I\'ll get back to you soon.');
       }, (error) => {
-        console.log('Failed to send email:', error.text);
-        alert('Oops! Something went wrong. Try emailing me directly at ' + portfolioData.contact.email);
+        createNotificationModal('error', 'Oops! Something went wrong. Try emailing me directly at ' + portfolioData.contact.email);
+      })
+      .finally(() => {
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
       });
   });
 
