@@ -42,7 +42,7 @@ function injectContent() {
   const timelineItems = [...portfolioData.education, ...portfolioData.certifications.map(cert => ({
     institution: cert,
     degree: 'Certification',
-    period: '2024-2025'
+    period: '2023-2025'
   }))];
   timeline.innerHTML = timelineItems.map((item, index) => `
         <div class="timeline-item">
@@ -70,25 +70,26 @@ function injectContent() {
     `).join('');
 
   // CONTACT
+  // CONTACT (updated form with name attributes for EmailJS)
   const contactContent = document.querySelector('#contact .contact-content');
   contactContent.innerHTML = `
-        <div class="contact-grid">
-            <div class="contact-info">
-                <p>Ready to collaborate on AI innovations or data-driven visions?</p>
-                <div class="contact-links">
-                    <a href="mailto:${portfolioData.contact.email}" class="contact-link">📧 Email</a>
-                    <a href="${portfolioData.contact.github}" target="_blank" class="contact-link">🐙 GitHub</a>
-                    <a href="https://linkedin.com/in/samuel-0228" target="_blank" class="contact-link">💼 LinkedIn</a>
-                </div>
+    <div class="contact-grid">
+        <div class="contact-info">
+            <p>Ready to collaborate on AI innovations or data-driven visions?</p>
+            <div class="contact-links">
+                <a href="mailto:${portfolioData.contact.email}" class="contact-link">📧 Email</a>
+                <a href="${portfolioData.contact.github}" target="_blank" class="contact-link">🐙 GitHub</a>
+                <a href="https://linkedin.com/in/samuel-0228" target="_blank" class="contact-link">💼 LinkedIn</a>
             </div>
-            <form class="contact-form" id="contact-form">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
         </div>
-    `;
+        <form class="contact-form" id="contact-form">
+            <input type="text" name="from_name" placeholder="Your Name" required>
+            <input type="email" name="from_email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+        </form>
+    </div>
+`;
 
   // MODALS
   let modalsHTML = '';
@@ -143,10 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
   animateSkillBars(); // Then animations
 
   // Form handler
+  // Form handler - Real email sending with EmailJS
   document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Message sent! (Demo - Integrate with EmailJS or backend for real use)');
-    e.target.reset();
+    e.preventDefault();  // Prevent default form submission
+
+    // Send email via EmailJS
+    emailjs.sendForm('service_dkiug9r', 'template_40toodj', '#contact-form', 'Ge23N6ZheHUku30D_')
+      .then((result) => {
+        console.log('Email sent successfully!', result.text);
+        alert('Message sent! I\'ll get back to you soon.');  // Or show a success modal
+        e.target.reset();  // Clear form
+      }, (error) => {
+        console.log('Failed to send email:', error.text);
+        alert('Oops! Something went wrong. Try emailing me directly at ' + portfolioData.contact.email);
+      });
   });
 
   // Project modals
