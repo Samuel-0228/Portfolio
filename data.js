@@ -42,7 +42,7 @@ Enrolled in 10 Academy’s Kaim AI Mastery. Passionate about visuals, aesthetics
             name: "Ethiopiaye",
             description: "An innovative tourism platform celebrating Ethiopia's rich cultural heritage. Features AI-powered personalized travel itineraries, immersive 360° virtual tours, and seamless booking integration to inspire unforgettable journeys.",
             link: "https://github.com/Samuel-0228/Ethiopiaye",
-            image: "assets/project-ethiopiaye.jpg"
+            image: "assets/project-Ethiopiaye.jpg"
         }
     ],
 
