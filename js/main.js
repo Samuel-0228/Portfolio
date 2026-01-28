@@ -77,7 +77,7 @@ function injectContent() {
         <div class="contact-info">
             <p>Ready to collaborate on AI innovations or data-driven visions?</p>
             <div class="contact-links">
-                <a href="mailto:${portfolioData.contact.email}" class="contact-link">📧 Email</a>
+                <a href="mailto:ytsamuael@gmail.com" class="contact-link">📧 Email</a>
                 <a href="${portfolioData.contact.github}" target="_blank" class="contact-link">🐙 GitHub</a>
                 <a href="https://linkedin.com/in/samuel-0228" target="_blank" class="contact-link">💼 LinkedIn</a>
             </div>
