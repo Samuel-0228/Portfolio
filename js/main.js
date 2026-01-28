@@ -24,7 +24,7 @@ function injectContent() {
         </div>
         <div class="stat-item">
           <h3>Years Active</h3>
-          <span class="stat-number">1 1/2+</span>
+          <span class="stat-number">1  1/2+</span>
         </div>
       </div>
     </div>
