@@ -18,10 +18,10 @@ Enrolled in 10 Academy’s Kaim AI Mastery. Passionate about visuals, aesthetics
     ],
 
     certifications: [
-        "Udacity — AI & Data Science Nanodegree",
-        "Educba — Data Analysis with Python",
-        "AI For Ethiopia — AI Fundamentals",
-        "10 Academy — Kaim AI Mastery Program(in progress)"
+        "Udacity- AI & Data Science Nanodegree",
+        "Educba - Data Analysis with Python",
+        "AI For Ethiopia - AI Fundamentals",
+        "10 Academy - Kaim AI Mastery Program(in progress)"
     ],
 
     projects: [
@@ -41,7 +41,8 @@ Enrolled in 10 Academy’s Kaim AI Mastery. Passionate about visuals, aesthetics
         {
             name: "Ethiopiaye",
             description: "An innovative tourism platform celebrating Ethiopia's rich cultural heritage. Features AI-powered personalized travel itineraries, immersive 360° virtual tours, and seamless booking integration to inspire unforgettable journeys.",
-            link: "https://github.com/Samuel-0228/Ethiopiaye",
+            link: "https://github.com/Samuel-0228/Visit.Ethiopiayen",
+            website: "https://visit-ethiopiayen.vercel.app/",
             image: "assets/project-Ethiopiaye.jpg"
         }
     ],

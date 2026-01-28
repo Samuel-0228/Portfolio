@@ -1,5 +1,3 @@
-// js/main.js - Consolidated: Injection first, then animations/observers
-
 // ===============================
 // CONTENT INJECTION
 // ===============================
@@ -26,7 +24,7 @@ function injectContent() {
         </div>
         <div class="stat-item">
           <h3>Years Active</h3>
-          <span class="stat-number">2+</span>
+          <span class="stat-number">1 1/2+</span>
         </div>
       </div>
     </div>
@@ -113,6 +111,7 @@ function injectContent() {
           <h2>${project.name}</h2>
           <p>${project.description}</p>
           <a href="${project.link}" target="_blank" class="btn-primary">View Project</a>
+          <a href="${project.website}" target="_blank" class="btn-primary">View Project Site</a>
         </div>
       </div>
     `;
