@@ -49,6 +49,7 @@ Enrolled in 10 Academy’s Kaim AI Mastery. Passionate about visuals, aesthetics
 
     contact: {
         email: "ytsamuael@gmail.com",
-        github: "https://github.com/Samuel-0228"
+        github: "https://github.com/Samuel-0228",
+        linkedin: "https://www.linkedin.com/in/samuel-yeshambel"
     }
 };
